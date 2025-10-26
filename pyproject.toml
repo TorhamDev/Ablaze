@@ -1,0 +1,15 @@
+[project]
+name = "ablaze"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "duckdb>=1.4.1",
+]
+
+# ruff configuration
+[tool.ruff]
+line-length = 88
+lint.select = ["E", "F", "W", "C90", "B", "I"]
+exclude = ["__pycache__", "build", "dist", ".venv"]
