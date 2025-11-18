@@ -11,16 +11,11 @@ from handlers.tasks import (
 
 def handle_prompts(prompt: str) -> None:
     """Handle user prompts and display available commands."""
-    from configs.constants import PROMPTS
 
     params = prompt.split(" ", 1)[1:]
     prompt = prompt.lower().split(" ")[0]
 
-    if prompt in ["help", "h", "?"]:
-        # TODO: needs a more detailed help page
-        print(PROMPTS)
-
-    elif prompt in ["exit", "quit", "q"]:
+    if prompt in ["exit", "quit", "q"]:
         print("Exiting the application. Goodbye!")
         sys.exit(0)
 

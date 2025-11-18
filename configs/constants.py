@@ -13,6 +13,5 @@ Commands:
 [D <task-number>] Delete
 [T <task-number>] Toggle
 [Q/EXIST/QUIT] Quit
-[H/?/Help] Show Help
 ───────────────────────────────
 """
