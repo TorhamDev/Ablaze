@@ -208,3 +208,7 @@ __marimo__/
 
 # vscode
 .vscode
+
+# database
+*.db
+*.db.wal

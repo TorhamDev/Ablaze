@@ -17,7 +17,9 @@ CREATE SEQUENCE IF NOT EXISTS days_log_id_seq START 1
 conn.execute("""
 CREATE TABLE IF NOT EXISTS tasks (
     id INTEGER PRIMARY KEY DEFAULT NEXTVAL('task_id_seq'),
-    title TEXT NOT NULL
+    title TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_completed BOOLEAN DEFAULT FALSE
 )
 """)
 
@@ -26,8 +28,6 @@ conn.execute("""
 CREATE TABLE IF NOT EXISTS days_log (
     id INTEGER PRIMARY KEY DEFAULT NEXTVAL('days_log_id_seq'),
     date DATE NOT NULL,
-    completed_tasks INTEGER NOT NULL,
-    uncompleted_tasks INTEGER NOT NULL,
     tasks JSON NOT NULL
 )
 """)
@@ -36,6 +36,3 @@ CREATE TABLE IF NOT EXISTS days_log (
 # commit table creations and pass the connection object to be used elsewhere
 conn.commit()
 
-
-def get_connection():
-    return conn
